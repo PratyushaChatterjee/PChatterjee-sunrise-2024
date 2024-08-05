@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Task Management System</h1>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2 class="text-center">All Tasks</h2>
+                <ul id="all-tasks" class="list-group mb-4"></ul>
+            </div>
+            <div class="col-md-12">
+                <h2 class="text-center">Pending Tasks</h2>
+                <ul id="pending-tasks" class="list-group mb-4"></ul>
+            </div>
+            <div class="col-md-12">
+                <h2 class="text-center">In Progress Tasks</h2>
+                <ul id="in-progress-tasks" class="list-group mb-4"></ul>
+            </div>
+            <div class="col-md-12">
+                <h2 class="text-center">Completed Tasks</h2>
+                <ul id="completed-tasks" class="list-group mb-4"></ul>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#createTaskModal">Create New Task</button>
+        </div>
+    </div>
+
+    <!-- Create Task Modal -->
+    <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createTaskModalLabel">Create New Task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="createTaskForm">
+                        <div class="form-group">
+                            <label for="taskNumber">Task Number</label>
+                            <input type="number" class="form-control" id="taskNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskName">Task Name</label>
+                            <input type="text" class="form-control" id="taskName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Task Description</label>
+                            <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskStatus">Status</label>
+                            <select class="form-control" id="taskStatus" required>
+                                <option value="pending">Pending</option>
+                                <option value="in progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
